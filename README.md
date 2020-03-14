@@ -19,6 +19,6 @@ plotabif(data)
 ```
 ### Plot
 
-Plot created is shown below`:
+Plot created is shown below:
 
 ![](Easy_Test/easytest_output.png)
