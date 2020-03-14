@@ -27,7 +27,7 @@ Plot created is shown below:
 
 ### Problem Statement
 
-To make a similar multi-panel ggplot with facet_grid.
+To make a similar multi-panel ggplot with `facet_grid`.
 
 ### Code
 
