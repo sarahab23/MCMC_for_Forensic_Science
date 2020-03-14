@@ -86,16 +86,25 @@ data_number<-rep("DATA.8",length(data[["DATA.8"]]))
 value<-data$DATA.8
 df8<-data.frame(time,data_number,value)
 
-#combining all 8 dataframes into a data frame
-df<-rbind(df1,df2,df3,df4,df5,df6,df7,df8)
+#combining the first 4 dataframes into a dataframe
+df<-rbind(df1,df2,df3,df4)
+#combining the next 4 dataframes into a dataframe
+datafr<-rbind(df5,df6,df7,df8)
 
 #plotting multi-panel ggplot with facet_grid
 ggplot(data = df,group=data_number,aes(color=data_number)) +
-  geom_line(data = df,aes(x=time,y=value))+facet_grid(.~data_number,scales = "free_x")+
+  geom_line(data = df,aes(x=time,y=value))+facet_grid(data_number~.,scales = "free")+
+  scale_x_continuous(name = "Time/1000")+scale_y_continuous(name = "RFU/1000")
+
+#plotting multi-panel ggplot with facet_grid
+ggplot(data = datafr,group=data_number,aes(color=data_number)) +
+  geom_line(data = datafr,aes(x=time,y=value))+facet_grid(data_number~.,scales = "free")+
   scale_x_continuous(name = "Time/1000")+scale_y_continuous(name = "RFU/1000")
 ```
 ### Plot
 
 Plot created by the above code is shown below:
 
-![](Medium_Test/mediumtest_output.png)
+![](Medium_Test/Output_plots/mediumtest_output01.png)
+![](Medium_Test/Output_plots/mediumtest_output02.png)
+
