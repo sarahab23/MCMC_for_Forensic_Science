@@ -108,3 +108,100 @@ Plot created by the above code is shown below:
 ![](Medium_Test/Output_plots/mediumtest_output01.png)
 ![](Medium_Test/Output_plots/mediumtest_output02.png)
 
+## 2. Medium Test
+
+### Problem Statement
+
+Demonstrate your capability in one of the "Bayesian packages for general model fitting" listed here: [https://cloud.r-project.org/web/views/Bayesian.html](https://cloud.r-project.org/web/views/Bayesian.html), or in writing an R package with C++ code.
+
+I have created two R packages using C++. One package is called `calc`, the other one `vectorfuncts` package. `calc` package basically does the function of a calculator. This package has a C++ file with functions `sum()`, `mul()`, `diff()` and `div()` which does the job of Addition, Multiplication, Subraction and Division respectively. It also consists of an R file with a function `calci()` that implements `sum()`, `mul()`, `diff()` and `div()` functions.
+The second package I created is `vectorfuncts` package. This package had a C++ file with two functions `larg()` and `small()`, which does the job of finding the largest and smallest number in the numeric vector passed respectively. It also has an R package which has functions `largest()` and `smallest()` that implements the above mentioned functions.
+
+### Code
+
+## vectorfuncts Package
+
+# C++ File code
+```
+#include<RcppArmadillo.h>
+// [[Rcpp::depends(RcppArmadillo)]]
+using namespace Rcpp ;
+// [[Rcpp::export()]]
+int sum(int a, int b){
+    return a+b;
+}
+// [[Rcpp::export()]] 
+int mul(int a, int b){
+      return a*b;
+  }
+// [[Rcpp::export()]]
+int diff(int a, int b){
+      return a-b;
+  }
+// [[Rcpp::export()]]
+float div(float a, float b){
+    return a/b;
+}
+```
+# R file Code
+```
+calci <- function(x,a,b){
+switch(
+  x,
+  "+" = ans <- sum(a,b), #Addition
+  "-" = ans <- diff(a,b), #Subraction
+  "*" = ans <- mul(a,b), #Multiplication
+  "/" = ans <- div(a,b) #Division
+)
+  ans
+}
+```
+
+## calc Package
+
+# C++ File code
+```
+#include<RcppArmadillo.h>
+// [[Rcpp::depends(RcppArmadillo)]]
+using namespace Rcpp ;
+// [[Rcpp::export()]]
+int larg(Rcpp::IntegerVector x){
+ int n = x.size();
+ int res = x[0] ;
+ for(int i=1;i<n;i++){
+    if(res<x[i])
+        res=x[i];
+ }
+ return res;
+}
+// [[Rcpp::export()]]
+int small(Rcpp::IntegerVector x){
+ int n = x.size();
+ int res = x[0] ;
+ for(int i=1;i<n;i++){
+    if(res>x[i])    
+        res=x[i];
+ }
+ return res;
+}
+```
+# R file Code
+```
+#function to find the largest number in a numeric vector
+largest <- function(x){
+  ans1 <- larg(x)
+  ans1
+}
+#function to find the smallest number in a numeric vector
+smallest <- function(x){
+  ans2 <- small(x)
+  ans2
+}
+```
+### Output
+
+I have attached the output screenshots to show the implementation of functions of the packages `calc` and `vectorfuncts`.
+
+![](Hard_Test/Output/package_calc_output.png)
+![](Hard_Test/Output/package_vectorfuncts_output.png)
+
