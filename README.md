@@ -119,7 +119,7 @@ The second package I created is `vectorfuncts` package. This package had a C++ f
 
 ### Code
 
-#### vectorfuncts Package
+#### `calc` Package
 
 ##### C++ File code
 ```
@@ -157,7 +157,7 @@ switch(
 }
 ```
 
-#### calc Package
+#### `vectorfuncts` Package
 
 ##### C++ File code
 ```
