@@ -108,7 +108,7 @@ Plot created by the above code is shown below:
 ![](Medium_Test/Output_plots/mediumtest_output01.png)
 ![](Medium_Test/Output_plots/mediumtest_output02.png)
 
-## 2. Medium Test
+## 3. Hard Test
 
 ### Problem Statement
 
