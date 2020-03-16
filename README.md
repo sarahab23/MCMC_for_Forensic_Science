@@ -119,9 +119,9 @@ The second package I created is `vectorfuncts` package. This package had a C++ f
 
 ### Code
 
-## vectorfuncts Package
+#### vectorfuncts Package
 
-# C++ File code
+##### C++ File code
 ```
 #include<RcppArmadillo.h>
 // [[Rcpp::depends(RcppArmadillo)]]
@@ -143,7 +143,7 @@ float div(float a, float b){
     return a/b;
 }
 ```
-# R file Code
+##### R file Code
 ```
 calci <- function(x,a,b){
 switch(
@@ -157,9 +157,9 @@ switch(
 }
 ```
 
-## calc Package
+#### calc Package
 
-# C++ File code
+##### C++ File code
 ```
 #include<RcppArmadillo.h>
 // [[Rcpp::depends(RcppArmadillo)]]
@@ -185,7 +185,7 @@ int small(Rcpp::IntegerVector x){
  return res;
 }
 ```
-# R file Code
+##### R file Code
 ```
 #function to find the largest number in a numeric vector
 largest <- function(x){
