@@ -11,6 +11,7 @@ First, I downloaded data from the given link. Then I installed the current versi
 ### Code
 
 ```
+rm(list=ls())
 library(seqinr)
 #reading fsa file using read.abif()
 data<-read.abif(file.choose ("A01-Ladder-PP16-001.20sec.fsa"))
@@ -32,6 +33,7 @@ To make a similar multi-panel ggplot with `facet_grid`.
 ### Code
 
 ```
+rm(list=ls())
 library(seqinr)
 library(ggplot2)
 #reading fsa file
